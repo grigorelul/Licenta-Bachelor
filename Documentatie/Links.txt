@@ -1,0 +1,18 @@
+Dataset:
+https://www.kaggle.com/datasets/jessicali9530/lfw-dataset/data
+https://www.kaggle.com/datasets/quadeer15sh/lfw-facial-recognition/data
+http://whdeng.cn/CALFW/index.html?reload=true
+http://www.whdeng.cn/cplfw/?reload=true
+https://www.kaggle.com/datasets/chinafax/cfpw-dataset
+http://www.cfpw.io/
+
+
+
+
+OpenCvDocumentation:
+https://docs.opencv.org/4.x/d0/dd4/tutorial_dnn_face.html
+https://www.researchgate.net/figure/Examples-of-the-validation-datasets-LFW-CALFW-CPLFW-CFP-FP-and-AgeDB-30-augmented_fig1_362704996
+https://ibug.doc.ic.ac.uk/resources/agedb/
+
+Articole:
+https://ibug.doc.ic.ac.uk/media/uploads/documents/agedb.pdf //pt determinare de varsta
