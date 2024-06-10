@@ -1,7 +1,5 @@
-﻿using TodoApi.DTOs;
-
-namespace TodoApi.Models
-{
+﻿
+namespace Models;
     public class Manager
     {
         public Guid Id { get; set; }
@@ -22,4 +20,3 @@ namespace TodoApi.Models
                 Email = managerDto.Email
             };
     }
-}

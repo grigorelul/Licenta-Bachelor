@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using Models;
 
 namespace Services;
 
@@ -54,7 +54,7 @@ public class UserRepository : IUserRepository
         return user;
     }
 
-    public async Task<IEnumerable<Attendance>> GetUserAttendences(Guid id)
+    public async Task<IEnumerable<Attendance>> GetUserAttendencesAsync(Guid id)
     {
         return await _context.Attendances.Where(a => a.UserId == id).ToListAsync();
     }

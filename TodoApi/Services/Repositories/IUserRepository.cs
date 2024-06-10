@@ -1,4 +1,4 @@
-﻿using TodoApi.Models;
+﻿using Models;
 namespace Services;
 
 public interface IUserRepository
@@ -9,6 +9,6 @@ public interface IUserRepository
     Task<User> CreateUserAsync(User user);
     Task<User> UpdateUserAsync(User user);
     Task<User> DeleteUserAsync(Guid id);
-    Task<IEnumerable<Attendance>> GetUserAttendences(Guid id);
+    Task<IEnumerable<Attendance>> GetUserAttendencesAsync(Guid id);
 }
 

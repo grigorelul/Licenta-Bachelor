@@ -1,7 +1,5 @@
-﻿using System;
-using TodoApi.Models;
-namespace TodoApi.DTOs;
-
+﻿
+namespace Models;
 
 public class UserDto
 {

@@ -1,6 +1,5 @@
-﻿using TodoApi.Models;
-
-namespace TodoApi.DTOs;
+﻿
+namespace Models;
 public class ManagerDto
 {
     public Guid Id { get; set; }

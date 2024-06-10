@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using TodoApi.DTOs;
-
-namespace TodoApi.Models
-{
+﻿
+namespace Models;
     public class User
     {
         public Guid Id { get; set; }
@@ -27,6 +24,3 @@ namespace TodoApi.Models
 
 
     }
-
-
-}

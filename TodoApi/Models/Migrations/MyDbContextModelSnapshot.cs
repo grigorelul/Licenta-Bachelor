@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TodoApi.Models;
+using Models;
 
 #nullable disable
 
 namespace TodoApi.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240609194511_migration2")]
-    partial class migration2
+    partial class MyDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +37,7 @@ namespace TodoApi.Migrations
                     b.ToTable("ManagerUser");
                 });
 
-            modelBuilder.Entity("TodoApi.Models.Attendance", b =>
+            modelBuilder.Entity("Models.Attendance", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,7 +46,7 @@ namespace TodoApi.Migrations
                     b.Property<DateTime>("DataPlecare")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataPosire")
+                    b.Property<DateTime>("DataSosire")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("ManagerId")
@@ -67,7 +64,7 @@ namespace TodoApi.Migrations
                     b.ToTable("Attendances");
                 });
 
-            modelBuilder.Entity("TodoApi.Models.Manager", b =>
+            modelBuilder.Entity("Models.Manager", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -93,7 +90,7 @@ namespace TodoApi.Migrations
                     b.ToTable("Managers");
                 });
 
-            modelBuilder.Entity("TodoApi.Models.User", b =>
+            modelBuilder.Entity("Models.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -121,28 +118,28 @@ namespace TodoApi.Migrations
 
             modelBuilder.Entity("ManagerUser", b =>
                 {
-                    b.HasOne("TodoApi.Models.Manager", null)
+                    b.HasOne("Models.Manager", null)
                         .WithMany()
                         .HasForeignKey("ManagersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TodoApi.Models.User", null)
+                    b.HasOne("Models.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TodoApi.Models.Attendance", b =>
+            modelBuilder.Entity("Models.Attendance", b =>
                 {
-                    b.HasOne("TodoApi.Models.Manager", "Manager")
+                    b.HasOne("Models.Manager", "Manager")
                         .WithMany("Attendances")
                         .HasForeignKey("ManagerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TodoApi.Models.User", "User")
+                    b.HasOne("Models.User", "User")
                         .WithMany("Attendances")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -153,12 +150,12 @@ namespace TodoApi.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("TodoApi.Models.Manager", b =>
+            modelBuilder.Entity("Models.Manager", b =>
                 {
                     b.Navigation("Attendances");
                 });
 
-            modelBuilder.Entity("TodoApi.Models.User", b =>
+            modelBuilder.Entity("Models.User", b =>
                 {
                     b.Navigation("Attendances");
                 });

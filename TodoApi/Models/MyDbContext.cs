@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace TodoApi.Models;
+namespace Models;
 
 public class MyDbContext : DbContext
 {
