@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Models;
 
-namespace Services;
+namespace Repositories;
 
 public class AttendanceRepository : IAttendanceRepository
 {

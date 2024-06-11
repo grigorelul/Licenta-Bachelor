@@ -9,7 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 from keras.utils import to_categorical
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
-
+from deepface import DeepFace
 
 # Define paths to dataset and split files
 data_dir = "LFW_DataSet/lfw_funneled"

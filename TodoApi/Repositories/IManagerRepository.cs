@@ -1,6 +1,6 @@
 ﻿using Models;
 
-namespace Services
+namespace Repositories
 {
     public interface IManagerRepository
     {

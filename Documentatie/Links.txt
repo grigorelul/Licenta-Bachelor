@@ -5,12 +5,19 @@ http://whdeng.cn/CALFW/index.html?reload=true
 http://www.whdeng.cn/cplfw/?reload=true
 https://www.kaggle.com/datasets/chinafax/cfpw-dataset
 http://www.cfpw.io/
+https://www.twine.net/blog/facial-recognition-datasets/
 
+
+Dataset Compared on Neural Network:
+https://paperswithcode.com/sota/face-recognition-on-lfw
+
+Explicatiie datasets:
+https://people.cs.umass.edu/~elm/papers/lfw.pdf
 
 
 
 OpenCvDocumentation:
-https://docs.opencv.org/4.x/d0/dd4/tutorial_dnn_face.html
+https://docs.opencv.org/4.x/d0/dd4/tutorial_dnn_face.html (Mai multe dataseturi si procentele lor incercate cu o retea neuronala in format ONNIX)
 https://www.researchgate.net/figure/Examples-of-the-validation-datasets-LFW-CALFW-CPLFW-CFP-FP-and-AgeDB-30-augmented_fig1_362704996
 https://ibug.doc.ic.ac.uk/resources/agedb/
 

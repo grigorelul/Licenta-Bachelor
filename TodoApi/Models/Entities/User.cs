@@ -14,7 +14,7 @@ namespace Models;
         public List<Attendance> Attendances { get; set; } = new List<Attendance>();
 
 
-        public static User FromUserDto(UserDto userDto) =>
+        public static User FromUserDtoToUser(UserDto userDto) =>
             new()
             {
                 Id = userDto.Id,

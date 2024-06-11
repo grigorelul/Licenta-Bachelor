@@ -12,7 +12,7 @@ namespace Models;
         
         public List<Attendance> Attendances { get; set; } = new List<Attendance>();
 
-        public static Manager FromManagerDto(ManagerDto managerDto) =>
+        public static Manager FromManagerDtoToManager(ManagerDto managerDto) =>
             new()
             {
                 Id = managerDto.Id,

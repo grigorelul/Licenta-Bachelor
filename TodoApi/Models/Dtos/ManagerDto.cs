@@ -6,7 +6,7 @@ public class ManagerDto
     public string Nume { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     
-    public static ManagerDto FromManager(Manager manager) =>
+    public static ManagerDto FromManagerToManagerDto(Manager manager) =>
         new()
         {
             Id = manager.Id,

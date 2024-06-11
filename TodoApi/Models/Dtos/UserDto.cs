@@ -7,7 +7,7 @@ public class UserDto
     public string Nume { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
 
-    public static UserDto FromUser(User user) =>
+    public static UserDto FromUserToUserDto(User user) =>
         new ()
     {
         Id = user.Id,
