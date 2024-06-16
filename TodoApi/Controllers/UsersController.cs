@@ -103,5 +103,22 @@ namespace TodoApi.Controllers
         {
             return _context.Users.Any(e => e.Id == id);
         }
+        
+        // POST: api/Users/login
+        [HttpPost("login")]
+        public async Task<ActionResult<UserDto>> Login([FromBody] UserDto loginDto)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginDto.Email && u.Parola == loginDto.Parola);
+
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var userDto = UserDto.FromUserToUserDto(user);
+            return Ok(userDto);
+        }
+
+        
     }
 }

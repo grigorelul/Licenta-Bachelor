@@ -7,7 +7,12 @@ namespace Models;
         public string Email { get; set; } = string.Empty;
         public string Parola { get; set; } = string.Empty;
         public bool? Admin { get; set; }
-
+        
+        // Adminul vede toate pontările 
+        //Admin = null => User
+        //Admin = true => Admin
+        //Admin = false => Manager
+        
         // Relații
         public List<Manager> Managers { get; set;} = new List<Manager>();
         // pontările unui angajat

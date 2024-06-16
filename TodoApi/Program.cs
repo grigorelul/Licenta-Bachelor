@@ -12,6 +12,19 @@ builder.Services.AddControllers();
 //builder.Services.AddDbContext<TodoContext>(opt =>
 //opt.UseInMemoryDatabase("TodoList"));
 
+
+// Adaugă serviciile CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builderCors =>
+        {
+            builderCors.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();
 
@@ -41,6 +54,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+// Activează politica CORS
+app.UseCors("AllowAllOrigins");
 
 app.UseAuthorization();
 

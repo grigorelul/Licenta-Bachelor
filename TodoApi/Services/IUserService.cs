@@ -15,5 +15,4 @@ public interface IUserService
     Task<IEnumerable<AttendanceDto>> GetUserAttendancesAsync(Guid userId);
     Task<AttendanceDto> CreateAttendanceAsync(Guid userId, AttendanceDto attendanceDto);
     Task<AttendanceDto> UpdateAttendanceAsync(Guid userId, Guid attendanceId, AttendanceDto attendanceDto);
-    Task DeleteAttendanceAsync(Guid userId, Guid attendanceId);
 }

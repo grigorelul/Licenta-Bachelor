@@ -5,7 +5,7 @@ public class AttendanceDto
 {
     public Guid Id { get; set; }
     public DateTime DataSosire { get; set; }
-    public DateTime DataPlecare { get; set; }
+    public DateTime? DataPlecare { get; set; }
     
     public static AttendanceDto FromAttendanceToAttendanceDto(Attendance attendance) =>
         new()
