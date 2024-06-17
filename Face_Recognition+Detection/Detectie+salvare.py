@@ -76,12 +76,15 @@ while True:
         # Extrage regiunea feței
         face_image = rgb_frame[top:bottom, left:right]
         
-        # Converteste imaginea din format RGB (utilizat de face_recognition) în BGR (utilizat de cv2)
-        face_image = cv.cvtColor(face_image, cv.COLOR_RGB2BGR)
+        # Converteste imaginea din format RGB (utilizat de face_recognition) în grayscale
+        face_image_gray = cv.cvtColor(face_image, cv.COLOR_RGB2GRAY)
+        
+        # Redimensionează imaginea feței la 48x48 pixeli
+        face_image_resized = cv.resize(face_image_gray, (48, 48))
         
         # Salvează imaginea feței în folderul "faces"
         face_filename = os.path.join(output_folder, f"face_{frame_count}_{j}.jpg")
-        cv.imwrite(face_filename, face_image)
+        cv.imwrite(face_filename, face_image_resized)
 
     frame_count += 1
 
