@@ -145,3 +145,17 @@ model.fit(
 
 scores = model.evaluate(X_test, y_test)
 print(f"Accuracy: {scores[1]*100}%")
+
+
+# Salvarea modelului complet
+model.save('model_complet.h5')
+print("Modelul complet a fost salvat ca 'model_complet.h5'")
+
+# Salvarea etichetelor
+np.save('all_labels.npy', all_labels)
+print("Etichetele au fost salvate ca 'all_labels.npy'")
+
+
+'''# Salvarea doar a greutăților
+model.save_weights('model_weights.h5')
+print("Greutățile modelului au fost salvate ca 'model_weights.h5'")'''

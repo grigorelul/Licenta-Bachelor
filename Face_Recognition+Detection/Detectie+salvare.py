@@ -80,7 +80,7 @@ while True:
         face_image_gray = cv.cvtColor(face_image, cv.COLOR_RGB2GRAY)
         
         # Redimensionează imaginea feței la 48x48 pixeli
-        face_image_resized = cv.resize(face_image_gray, (48, 48))
+        face_image_resized = cv.resize(face_image_gray, (64, 64))
         
         # Salvează imaginea feței în folderul "faces"
         face_filename = os.path.join(output_folder, f"face_{frame_count}_{j}.jpg")
