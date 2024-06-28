@@ -8,9 +8,9 @@ namespace Models;
         public string Parola { get; set; } = string.Empty; 
         public bool? Admin { get; set; }
 
-        public List<User> Users { get; set; } = new List<User>();
+        public List<User>? Users { get; set; } = new List<User>();
         
-        public List<Attendance> Attendances { get; set; } = new List<Attendance>();
+        public List<Attendance>? Attendances { get; set; } = new List<Attendance>();
 
         public static Manager FromManagerDtoToManager(ManagerDto managerDto) =>
             new()

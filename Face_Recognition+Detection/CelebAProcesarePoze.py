@@ -1,4 +1,4 @@
-"Procesarea pozelor cu YUNET cat si calibrarea contrastului si luminozitatii"
+# "Procesarea pozelor cu YUNET si calibrarea contrastului si luminozitatii"
 
 # import os
 # from PIL import Image
@@ -40,7 +40,6 @@
 
 #     detections = yunet.infer(image)
     
-#     # Dacă detectam cel puțin o față
 #     if detections.shape[0] > 0:
 #         for detection in detections:
 #             x, y, width, height = (detection[0], detection[1], 
@@ -103,7 +102,7 @@
 
 # def process_images(input_dir, output_dir):
 
-#     # Obține toate fișierele din directorul de intrare
+#     # Obțin toate fișierele din directorul de intrare
 #     image_files = [f for f in os.listdir(input_dir) if f.endswith('.jpg')]
     
 #     # Parcurg toate pozele
@@ -117,8 +116,7 @@
 #         detections = detector.detect_faces(image_array)
         
         
-#         if detections:
-#             # Stiu ca in toate pozele am deja doar o fata deci iau doar prima detectie
+#         if detections:            # Stiu ca in toate pozele am deja doar o fata deci pot să iau doar prima detectie
 #             detection = detections[0]
 #             x, y, width, height = detection['box']
 #             x, y = abs(x), abs(y)
@@ -139,7 +137,7 @@
 # process_images(input_dir, output_dir)
 
 
-" In caz ca se blocheaza la o anumita poza putem sa oprim procesarea si sa continuam de la poza respectiva"
+# " In caz ca se blocheaza la o anumita poza putem sa oprim procesarea si sa continuam de la poza respectiva"
 # import os
 # from PIL import Image
 # import numpy as np
@@ -164,7 +162,7 @@
 #     # Parcurg toate pozele
 #     for image_file in image_files:
         
-#         if image_file == start_file:  # Verificăm dacă am ajuns la fișierul de start iar daca da setam start_processing pe True pentru a incepe procesarea imaginilor
+#         if image_file == start_file:  # Verific dacă am ajuns la fișierul de start iar daca da setam start_processing pe True pentru a incepe procesarea imaginilor
 #             start_processing = True
         
 #         if not start_processing:

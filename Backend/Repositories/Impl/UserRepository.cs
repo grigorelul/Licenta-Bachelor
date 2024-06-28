@@ -17,6 +17,12 @@ public class UserRepository : IUserRepository
     {
         return await _users.ToListAsync();
     }
+
+    public async Task<IEnumerable<User>> GetUserByNumeAsync(string username)
+    {
+        return await _users.Where(u => u.Nume == username).ToListAsync();
+    }
+    
     public async Task<User> CreateUserAsync(User user)
     {
         await _users.AddAsync(user);

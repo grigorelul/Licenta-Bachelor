@@ -75,15 +75,16 @@ y_val = label_encoder.transform(y_val)
 y_test = label_encoder.transform(y_test)
 
 
-# Salvarea etichetelor unice
+# Salvez doar etichetele unice
 all_labels = np.unique(np.concatenate([y_train, y_val, y_test]))
 
-# Conversia etichetelor în categorii binare
+# Fac conversie la one-hot encoding sau categorii binare
 y_train = tf.keras.utils.to_categorical(y_train, num_classes=len(all_labels))
 y_val = tf.keras.utils.to_categorical(y_val, num_classes=len(all_labels))
 y_test = tf.keras.utils.to_categorical(y_test, num_classes=len(all_labels))
 
 
+# Salvez etichetele
 
 np.save('y_train.npy', y_train)
 np.save('y_val.npy', y_val)

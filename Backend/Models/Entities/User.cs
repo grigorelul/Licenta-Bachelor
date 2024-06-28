@@ -14,9 +14,9 @@ namespace Models;
         //Admin = false => Manager
         
         // Relații
-        public List<Manager> Managers { get; set;} = new List<Manager>();
+        public List<Manager>? Managers { get; set;} = new List<Manager>();
         // pontările unui angajat
-        public List<Attendance> Attendances { get; set; } = new List<Attendance>();
+        public List<Attendance>? Attendances { get; set; } = new List<Attendance>();
 
 
         public static User FromUserDtoToUser(UserDto userDto) =>
