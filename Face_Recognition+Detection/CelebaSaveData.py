@@ -38,7 +38,7 @@ def preprocess_images(image_ids, img_dir, img_size=(64, 64)):
     images = []
     for img_id in tqdm(image_ids):
         img_path = os.path.join(img_dir, img_id)
-        img = load_img(img_path, target_size=img_size, color_mode='grayscale')  # Convertire la grayscale
+        img = load_img(img_path, target_size=img_size, color_mode='grayscale')
         img_array = img_to_array(img)
         images.append(img_array)
     images = np.array(images, dtype='float32') / 255.0
@@ -62,10 +62,8 @@ y_val = identities.loc[val_imgs].values[:, 0]
 y_test = identities.loc[test_imgs].values[:, 0]
 
 
-# Creez o lista cu toate etichetele
 all_labels = np.unique(np.concatenate([y_train, y_val, y_test]))
 
-# Fac un label encoder 
 label_encoder = LabelEncoder()
 label_encoder.fit(all_labels)
 

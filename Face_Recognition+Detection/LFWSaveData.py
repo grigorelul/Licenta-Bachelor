@@ -1,4 +1,3 @@
-"Verificarea și salvarea seturilor de date pentru antrenare și testare a rețelei neuronale. in format .npy"
 
 import numpy as np
 import os
@@ -13,7 +12,7 @@ peopleDevTrain = np.genfromtxt(peopleDevTrain_path, delimiter=',', dtype=str, sk
 people_path = 'D:/Licenta-Bachelor/Face_Recognition+Detection/Datasets/LFW_DataSet/people.csv'
 people = np.genfromtxt(people_path, delimiter=',', dtype=str, skip_header=1)
 
-# Funcția de încărcare a fotografiilor și etichetelor
+
 def load_images_and_labels(dataset):
     images = []
     labels = []
@@ -51,14 +50,14 @@ train_images, test_images, train_labels, test_labels = train_test_split(train_im
 
 #Salvam toate seturile
 
-np.save('peopleDevTrain_images_train.npy', train_images)
-np.save('peopleDevTrain_labels_train.npy', train_labels)
-np.save('peopleDevTrain_images_test.npy', test_images)
-np.save('peopleDevTrain_labels_test.npy', test_labels)
+np.save('1peopleDevTrain_images_train.npy', train_images)
+np.save('1peopleDevTrain_labels_train.npy', train_labels)
+np.save('1peopleDevTrain_images_test.npy', test_images)
+np.save('1peopleDevTrain_labels_test.npy', test_labels)
 
 
 people_images, people_labels = load_images_and_labels(people)
-np.save('people_images.npy', people_images)
-np.save('people_labels.npy', people_labels)
+np.save('1people_images.npy', people_images)
+np.save('1people_labels.npy', people_labels)
 
 print('Salvarea seturilor de date a fost finalizată.')

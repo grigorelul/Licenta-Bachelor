@@ -9,11 +9,11 @@ using Models;
 
 #nullable disable
 
-namespace TodoApi.Migrations
+namespace Backend.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240610200309_migration0")]
-    partial class migration0
+    [Migration("20240708170840_migrare2")]
+    partial class migrare2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,16 +46,16 @@ namespace TodoApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DataPlecare")
+                    b.Property<DateTime?>("DataPlecare")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataSosire")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("ManagerId")
+                    b.Property<Guid?>("ManagerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -138,15 +138,11 @@ namespace TodoApi.Migrations
                 {
                     b.HasOne("Models.Manager", "Manager")
                         .WithMany("Attendances")
-                        .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ManagerId");
 
                     b.HasOne("Models.User", "User")
                         .WithMany("Attendances")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Manager");
 

@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace TodoApi.Migrations
+namespace Backend.Migrations
 {
     /// <inheritdoc />
-    public partial class migration0 : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

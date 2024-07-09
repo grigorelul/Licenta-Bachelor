@@ -49,10 +49,10 @@ namespace TodoApi.Migrations
                     b.Property<DateTime>("DataSosire")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("ManagerId")
+                    b.Property<Guid?>("ManagerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -135,15 +135,11 @@ namespace TodoApi.Migrations
                 {
                     b.HasOne("Models.Manager", "Manager")
                         .WithMany("Attendances")
-                        .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ManagerId");
 
                     b.HasOne("Models.User", "User")
                         .WithMany("Attendances")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Manager");
 

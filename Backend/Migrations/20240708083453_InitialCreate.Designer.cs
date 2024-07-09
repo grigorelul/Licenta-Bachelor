@@ -9,11 +9,11 @@ using Models;
 
 #nullable disable
 
-namespace TodoApi.Migrations
+namespace Backend.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240628115256_migrare1")]
-    partial class migrare1
+    [Migration("20240708083453_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

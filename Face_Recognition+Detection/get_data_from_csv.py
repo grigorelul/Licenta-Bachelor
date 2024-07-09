@@ -73,26 +73,16 @@ gray_train_images = process_gray_images(gray_raw_train_images)
 gray_train_labels = to_categorical(gray_raw_train_labels, len(set(gray_raw_train_labels)))
 #gray_test_labels = to_categorical(gray_raw_test_labels, len(set(gray_raw_test_labels)))
 
-#Label encoder
+
+
 label_encoder = LabelEncoder()
 label_encoder.fit(normal_raw_names)
 train_labels = label_encoder.transform(normal_raw_names)
 num_classes = len(set(train_labels))
 
 
-# ---------- Data Augmentation ----------
-datagen = ImageDataGenerator(
-    rotation_range=20,
-    width_shift_range=0.2,
-    height_shift_range=0.2,
-    horizontal_flip=True,
-    fill_mode='nearest'
-)
 
-
-
-
-#---------- NN ----------
+#---------- CNN ----------
 model = models.Sequential([
     layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(128, 128, 3)),
     layers.MaxPooling2D((2, 2)),
@@ -110,7 +100,6 @@ model.compile(optimizer=Adam(learning_rate=0.0001), loss='categorical_crossentro
 model.summary()
 
 
-# Split normal_train_images and labels into train and validation sets
 
 train_set_size = int(0.8 * len(normal_train_images))
 train_images = normal_train_images[:train_set_size]
@@ -118,13 +107,11 @@ train_labels = normal_train_labels[:train_set_size]
 test_images = normal_train_images[train_set_size:]
 test_labels = normal_train_labels[train_set_size:]
 
-#Normalize pixels
+
 train_images = train_images / 255.0
 test_images = test_images / 255.0
 
 
-#
-#Split gray_train_images and labels into train and validation sets
 
 # train_set_size = int(0.8 * len(gray_train_images))
 # train_images = gray_train_images[:train_set_size]
@@ -133,13 +120,12 @@ test_images = test_images / 255.0
 # test_labels = gray_train_labels[train_set_size:]
 
 
-#Pentru color
-history = model.fit(datagen.flow(train_images, train_labels, batch_size=32),
+
+history = model.fit(train_images, train_labels, batch_size=32,
                     epochs=10,
                     validation_data=(test_images, test_labels))
 
 
-# Plot the training history
 plt.plot(history.history['accuracy'], label='accuracy')
 plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
 plt.xlabel('Epoch')
@@ -148,7 +134,6 @@ plt.ylim([0, 1])
 plt.legend(loc='lower right')
 plt.show()
 
-#Plot the loss
 plt.plot(history.history['loss'], label='loss')
 plt.plot(history.history['val_loss'], label = 'val_loss')
 plt.xlabel('Epoch')
@@ -160,8 +145,6 @@ plt.show()
 
 
 model.save('face_recognition_model.h5')
-
-# Evaluate the model on the test data using `evaluate`
 
 
 

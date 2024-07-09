@@ -1,7 +1,7 @@
 import pyodbc
 
 # Detaliile de conexiune
-server = 'localhost'  # Poți specifica și portul dacă este necesar: 'localhost,1433'
+server = 'localhost'  # Portul 'localhost,1433'
 database = 'Licenta'
 
 # String-ul de conexiune

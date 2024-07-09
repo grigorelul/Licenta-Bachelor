@@ -39,8 +39,7 @@ def save_image_to_csv(image, label, name, usage):
     
     
     pixels_string = ""
-    # Folosesc flatten pentru a transforma imaginea intr-un vector unidimensional
-    for pixel in image.flatten():
+    for pixel in image.flatten():       # Folosesc flatten pentru a transforma imaginea intr-un vector unidimensional
         pixels_string += str(pixel) + " "
     pixels_string = pixels_string[:-1]
     

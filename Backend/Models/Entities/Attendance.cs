@@ -6,8 +6,8 @@ namespace Models;
 
         public DateTime DataSosire { get; set; } // Coloană datetime
         public DateTime? DataPlecare { get; set; } // Coloană datetime
-        public Guid UserId { get; set; } // Cheie străină către User
-        public Guid ManagerId { get; set; } // Cheie străină către Manager
+        public Guid? UserId { get; set; } // Cheie străină către User
+        public Guid? ManagerId { get; set; } // Cheie străină către Manager
 
         public User? User { get; set; }
         

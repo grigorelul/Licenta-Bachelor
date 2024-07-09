@@ -1,4 +1,4 @@
-# "Procesarea pozelor cu YUNET si calibrarea contrastului si luminozitatii"
+"Procesarea pozelor cu YuNet"
 
 # import os
 # from PIL import Image
@@ -64,7 +64,6 @@
 #         print(f'Nici-o fata: {image_path}')
 
 
-# # Caut poze lipsa
 
 # def process_missing_images(input_dir, output_dir):
     
@@ -156,10 +155,8 @@
 # def process_images(input_dir, output_dir, start_file):
 #     global start_processing
 
-#     # Obtin toate fisierele din directorul de intrare
 #     image_files = [f for f in os.listdir(input_dir) if f.endswith('.jpg')]
     
-#     # Parcurg toate pozele
 #     for image_file in image_files:
         
 #         if image_file == start_file:  # Verific dacă am ajuns la fișierul de start iar daca da setam start_processing pe True pentru a incepe procesarea imaginilor
